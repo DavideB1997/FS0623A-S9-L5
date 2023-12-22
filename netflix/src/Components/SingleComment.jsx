@@ -9,7 +9,7 @@ class SingleComment extends React.Component {
 	render() {
 		return (
 			<>
-				<ListGroup.Item key={this.props._id}>
+				<ListGroup.Item key={this.props._id} className='w-100'>
 					<div>{this.props.comment}</div>
 				</ListGroup.Item>
 			</>

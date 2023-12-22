@@ -1,5 +1,6 @@
 import React from 'react';
-import MovieLine from './MovieLine';
+import SearchLine from './MovieLine';
+import Search from './Search';
 
 class Main extends React.Component {
 	constructor(props) {
@@ -9,7 +10,10 @@ class Main extends React.Component {
 	render() {
 		return (
 			<div className='container-fluid px-4'>
-				<MovieLine />
+				<Search />
+				<SearchLine searchTerm='Terminator' />
+				<SearchLine searchTerm='Harry Potter' />
+				<SearchLine searchTerm='Star Wars' />
 			</div>
 		);
 	}

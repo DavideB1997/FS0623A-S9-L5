@@ -13,7 +13,7 @@ class MovieLine extends React.Component {
 	}
 
 	getMovies = () => {
-		fetch('http://www.omdbapi.com/?apikey=87450841&s=harry%20potter')
+		fetch('http://www.omdbapi.com/?apikey=87450841&s=' + this.props.searchTerm)
 			.then((res) => {
 				if (res.ok) {
 					return res.json();
@@ -47,7 +47,7 @@ class MovieLine extends React.Component {
 
 		return (
 			<>
-				{/* <h1>{this.props.search}</h1> qui ci và la ricerca fatta per trovare il film */}
+				<h1 className='text-white'>{this.props.searchTerm}</h1>
 				<div className='row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center'>
 					{this.state.movies.slice(0, movieCap).map((movie, index) => (
 						<div

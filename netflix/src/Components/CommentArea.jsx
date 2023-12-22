@@ -64,11 +64,8 @@ class CommentArea extends React.Component {
 		return (
 			<>
 				<Container>
-					<Row className='justify-content-center mt-3'>
-						<Col
-							md={8}
-							className={`col col-md-8 ${this.state.isLoading ? 'mb-2' : 'mb-3'}`}
-						>
+					<div className='mt-3'>
+						<div className='w-100 d-flex'>
 							{this.state.isLoading && (
 								<div>
 									<Spinner animation='border' variant='info' />
@@ -79,14 +76,15 @@ class CommentArea extends React.Component {
 									Errore nel recupero commenti
 								</Alert>
 							)}
-							<ListGroup>
-								{this.state.commenti.map((commento) => {
+							<ListGroup className='w-100'>
+								{this.state.commenti.map((commento, index) => {
 									return (
-										<div>
+										<div className='d-flex my-2'>
 											<SingleComment
+												key={index}
 												_id={commento._id}
 												comment={commento.comment}
-												asin={this.props.asin}
+												asin={this.props.imdbID}
 											/>
 											<Button
 												variant='light'
@@ -120,10 +118,10 @@ class CommentArea extends React.Component {
 									);
 								})}
 							</ListGroup>
-						</Col>
-					</Row>
+						</div>
+					</div>
 
-					<AddComment imdbID={this.props.imdbID} />
+					<AddComment imdbID={this.props.imdbID} getCommenti={this.getCommenti} />
 				</Container>
 			</>
 		);
