@@ -41,7 +41,6 @@ class CommentArea extends React.Component {
 				}
 			})
 			.then((data) => {
-				console.log(this.props.asin);
 				console.log(data);
 				this.setState({
 					commenti: data,
@@ -124,7 +123,7 @@ class CommentArea extends React.Component {
 						</Col>
 					</Row>
 
-					<AddComment />
+					<AddComment imdbID={this.props.imdbID} />
 				</Container>
 			</>
 		);

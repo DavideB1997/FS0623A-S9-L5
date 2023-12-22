@@ -10,7 +10,7 @@ const MovieModal = ({ movie, onClose }) => {
 			</Modal.Header>
 			<Modal.Body>
 				<h1>Commenti!</h1>
-				<CommentArea imdbID={movie.imdbID} />
+				<CommentArea movie={movie} imdbID={movie.imdbID} />
 			</Modal.Body>
 		</Modal>
 	);

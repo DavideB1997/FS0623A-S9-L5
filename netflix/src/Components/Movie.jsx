@@ -32,7 +32,6 @@ class Movie extends React.Component {
 
 		return (
 			<>
-				{console.log(Title)}
 				<Card style={cardStyle} onClick={this.handleToggleSelected}>
 					<Card.Img variant='top' src={Poster} />
 					<Card.Body>
